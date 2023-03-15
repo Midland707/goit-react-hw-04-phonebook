@@ -11,12 +11,10 @@ export function App() {
     const contactsStorage = localStorage.getItem('contactsStorage');
     const parsedContacts = JSON.parse(contactsStorage);
     if (parsedContacts.length > 0) setContacts(parsedContacts);
-    console.log('contacts in Mount = ', contacts);
   }, []);
 
   useEffect(() => {
     localStorage.setItem('contactsStorage', JSON.stringify(contacts));
-    console.log('contacts in Update = ', contacts);
   }, [contacts]);
 
   const onSubmitForm = (data, resetForm) => {
